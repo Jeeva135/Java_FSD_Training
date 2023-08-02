@@ -1,0 +1,43 @@
+body{
+    height: 100vh;
+    /* background: #a3a2a2; */
+}
+
+.container{
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 10px;
+    min-width: 450px;
+    position: absolute; 
+    min-height: 100px;
+    transform: translate(-50%,-50%); 
+    background-color: rgb(124, 242, 242);
+}
+#newtask{
+    position: relative;
+    padding: 30px 20px;
+}
+#newtask input{
+    width: 85%;
+    height: 30px;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+    margin-bottom: 10px;
+}
+.to-do-list{
+    padding: 12px;
+}
+#newtask button{
+    background-color: rgb(184, 105, 153);
+    width: 20%;
+    height: 45px;
+
+}

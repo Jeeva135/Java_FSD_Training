@@ -1,0 +1,67 @@
+-- SQLBook: Code
+create database irctc;
+-- SQLBook: Code
+use irctc;
+-- SQLBook: Code
+create table station(
+    station_id VARCHAR(50) PRIMARY KEY,
+    station_name VARCHAR(50)
+)
+-- SQLBook: Code
+create table train (
+    train_id INT PRIMARY KEY,
+    train_name VARCHAR(50)
+);
+-- SQLBook: Code
+use irctc;
+-- SQLBook: Code
+drop table station;
+-- SQLBook: Code
+create table route(
+    route_id INT PRIMARY KEY,
+    train_id INT,
+    origin_station_id VARCHAR(50),
+    destination_station_id VARCHAR(50),
+    distance DECIMAL,
+    Foreign Key (train_id) REFERENCES train(train_id),
+    Foreign Key (origin_station_id) REFERENCES station(station_id),
+    Foreign Key (destination_station_id) REFERENCES station(station_id)
+);
+-- SQLBook: Code
+create table schedule(
+    schedule_id INT PRIMARY KEY,
+    route_id INT,
+    departure_time TIME,
+    arrival_time TIME,
+    Foreign Key (route_id) REFERENCES route(route_id)
+);
+-- SQLBook: Code
+INSERT INTO train(train_id,train_name)values(120001,'PARASURAM');
+INSERT INTO train(train_id,train_name)values(120002,'MAVELI');
+INSERT INTO train(train_id,train_name)values(120003,'JANASHADABDHI');
+INSERT INTO train(train_id,train_name)values(120004,'VENAD');
+-- SQLBook: Code
+INSERT INTO Station (station_id, station_name) VALUES (1, 'Trivandrum');
+INSERT INTO Station (station_id, station_name) VALUES (2, 'Kottayam');
+INSERT INTO Station (station_id, station_name) VALUES (3, 'Alapuzha');
+INSERT INTO Station (station_id, station_name) VALUES (4, 'Ernakulam');
+-- SQLBook: Code
+INSERT INTO Route (route_id, train_id, origin_station_id, destination_station_id, distance) VALUES (100, 120001, 1, 4, 200);
+INSERT INTO Route (route_id, train_id, origin_station_id, destination_station_id, distance) VALUES (200, 120002, 1, 4, 210);
+INSERT INTO Route (route_id, train_id, origin_station_id, destination_station_id, distance) VALUES (300, 120003, 4, 1, 210);
+INSERT INTO Route (route_id, train_id, origin_station_id, destination_station_id, distance) VALUES (400, 120004, 4, 1, 200);
+-- SQLBook: Code
+desc train;
+-- SQLBook: Code
+ALTER Table train
+ADD column destination_station VARCHAR(50) after origin_station;
+-- SQLBook: Code
+alter table train
+RENAME column destination_station to end_station_id;
+-- SQLBook: Code
+alter table train
+modify end_station_id INT;
+-- SQLBook: Code
+alter table station 
+add column station_code INT after station_id;
+

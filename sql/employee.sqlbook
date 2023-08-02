@@ -1,0 +1,20 @@
+-- SQLBook: Code
+select * from employees limit 10;
+-- SQLBook: Code
+SELECT dept_no,dept_name,emp_no from departments JOIN dept_manager USING(dept_no)
+-- SQLBook: Code
+select emp_no 'ID',title 'JOB', CONCAT_WS(' ',first_name,last_name) 'Employee',DATE_FORMAT(from_date,'%W %D %M %Y')'start on',DATE_FORMAT(to_date,'%W %D %M %Y')'ended at' from employees join titles USING(emp_no);
+-- SQLBook: Code
+select emp_no 'ID', salary 'Salary',CONCAT_WS(' ',first_name,last_name) 'Employee',DATE_FORMAT(from_date,'%W %D %M %Y')'Paid From',DATE_FORMAT(to_date,'%W %D %M %Y')'Paid Till' from employees join salaries USING(emp_no);
+-- SQLBook: Code
+select emp_no 'Id', salary 'Salary', title 'Title', CONCAT_WS(' ',first_name,last_name)'Employee',DATE_FORMAT(s.from_date,'%W %D %M %Y')'Paid from',DATE_FORMAT(s.to_date,'%W %D %M %Y')'Paid Till',DATE_FORMAT(t.from_date,'%W %D %M %Y')'Started On',DATE_FORMAT(t.to_date,'%W %D %M %Y')'Ended On' from titles as t JOIN salaries as s USING(emp_no) JOIN employees USING(emp_no); 
+-- SQLBook: Code
+DELIMITER $$ CREATE Procedure GET_EMP_DETAILS()BEGIN SELECT emp_no, CONCAT_WS('-',first_name,last_name) 'Full Name' from employees; END$$ DELIMITER;
+-- SQLBook: Code
+USE EMPLOYEES;
+-- SQLBook: Code
+CALL GET_EMP_DETAILS();
+-- SQLBook: Code
+DELIMITER $$ CREATE PROCEDURE GET_EMP_DETAILS_BY_DEPT(IN DEPT_NO CHAR(4)) 
+-- SQLBook: Code
+DELIMITER $$ CREATE Procedure GET_EMP_DETAILS_BY_DEPT(IN DEPT_NO CHAR(4))BEGIN SELECT emp_no, CONCAT_WS('-',first_name,last_name) 'Full Name' from employees LIMIT 30; END$$ DELIMITER;

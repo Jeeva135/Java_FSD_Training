@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+    --Paleblue: hsl(225, 100%, 94%);
+    --Brightblue: hsl(245, 75%, 52%);
+    --Verypaleblue: hsl(225, 100%, 98%);
+    --Desaturatedblue: hsl(224, 23%, 55%);
+    --Darkblue: hsl(223, 47%, 23%);
+}
+
+body{
+    background-image: url("/images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-color: var(--Paleblue);
+    background-size: contain;
+    font-family: 'Red Hat Display', sans-serif;
+
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4rem;
+}
+
+.container{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    border-radius: 12px;
+    box-shadow: 2px 0px 36px 0px grey;
+
+}
+
+image{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.image>img{
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    width: fit-content;
+    height: fit-content;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+.heading>p{
+    font-size: 29px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+.content{
+    margin: -21px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.content>p{
+    color: var(--Desaturatedblue);
+    line-height: 23px;
+    padding-left: 10px;
+    padding-right: 14px;
+}
+.sub-content{
+    background-color: rgb(231, 234, 244);
+    border-radius: 12px;
+    margin: 45px;
+}
+.sub-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.plan>.annual{
+    font-weight: 700;
+    margin-left: -22px;
+}
+.plan>.year{
+    margin-left: -22px;
+    margin-top: -8px;
+}
+.change>a{
+    color: var(--Brightblue);
+    font-weight: 700;
+}
+.proceed{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+.proceed>button{
+    color: aliceblue;
+    background-color: var(--Brightblue);
+    padding-block: 10px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px 3px 6px 0px grey;
+}
+.cancel{
+    display: flex;
+    flex-direction: column;
+    margin-block: 2rem;
+}
+.cancel>button{
+    background-color: aliceblue;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--Desaturatedblue);
+}

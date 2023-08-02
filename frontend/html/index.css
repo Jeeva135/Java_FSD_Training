@@ -1,0 +1,22 @@
+body {
+    background-image: url('https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: lightgray;
+    
+}
+h1 {
+    text-align: center;
+    color: green;
+    
+}
+h2{
+    text-align: left;
+    font-style:italic;
+    color: brown;
+    
+}
+p {
+    font-family: sans-serif;
+    font-size: 16px;
+}

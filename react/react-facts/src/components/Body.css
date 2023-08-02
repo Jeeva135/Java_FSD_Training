@@ -1,0 +1,17 @@
+.body{
+    background-image: url("https://tse2.mm.bing.net/th/id/OIP.XMJOqsxF3JuXexojdz01FQHaEK?pid=ImgDet&rs=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33rem;
+}
+li::marker{
+    color: aqua;
+}
+ul{
+    font-size: large;
+    padding-left: 35px;
+}
+h2{
+    margin-left: 10px;
+    padding-top: 10px;
+}

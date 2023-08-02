@@ -1,0 +1,39 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 227);
+}
+h1{
+    text-align: center;    
+}
+.image{
+    text-align: center;
+}
+button{
+    background-color: blue;
+}
+/* @media screen and (maxwidth:400px){
+    body{
+        background-color: aqua;
+    }
+    h1{
+       color: brown; 
+    }
+} */
+@media screen and (min-width:401px) and (max-width:600px) {
+    body{
+        background-color: darkgrey;
+    }
+    h1{
+       color: rgb(30, 163, 41); 
+    }
+}
+@media screen and (min-width:601px) and (max-width:800px) {
+    body{
+        background-color: rgb(190, 219, 239);
+    }
+    h1{
+       color: rgb(30, 163, 41); 
+    }
+}

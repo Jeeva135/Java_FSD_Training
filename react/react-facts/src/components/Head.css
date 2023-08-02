@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    border: 1px;
+    background-color: black;
+}
+.head-left{
+    display: flex;
+}
+img{
+    height: 3%;
+    width: 3%;
+    margin : 30px 10px 30px 20px;
+    
+}
+h1{
+    color: aqua;
+    margin-top: 20px;
+}
+.head-right{
+    margin-left: auto;
+    display: flex;
+}
+h3{
+    margin-top: 25px;
+    margin-right: 10px;
+}

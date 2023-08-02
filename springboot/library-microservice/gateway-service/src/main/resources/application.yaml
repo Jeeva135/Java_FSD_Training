@@ -1,0 +1,18 @@
+# Configuration file for gateway-service
+application:
+  port: 8080
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        -id:
+         uri:
+         predicates:
+           Path:
+           Method:
+eureka:
+  client:
+    serviceUrl:
+    defaultPath:

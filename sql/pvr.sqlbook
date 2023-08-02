@@ -1,0 +1,94 @@
+-- SQLBook: Code
+create database PVR;
+-- SQLBook: Code
+use PVR;
+-- SQLBook: Code
+create table multiplexes(
+multiplex_id INT PRIMARY KEY,
+address VARCHAR(50),
+screen_count INT,
+total_seating INT
+);
+-- SQLBook: Code
+create table screens(
+screen_id INT PRIMARY KEY,
+screen_no INT,
+multiplex_id INT,
+Foreign Key (multiplex_id) REFERENCES multiplexes(multiplex_id),
+no_seats INT NOT NULL,
+no_seat_types INT NOT NULL
+);
+-- SQLBook: Code
+alter table multiplex add column no_of_seats INT;
+-- SQLBook: Code
+desc multiplexes;
+-- SQLBook: Code
+desc screen;
+-- SQLBook: Code
+create table movies(
+    movie_id INT PRIMARY KEY,
+    movie_name VARCHAR(50),
+    language VARCHAR(50),
+    rating VARCHAR(50)
+);
+-- SQLBook: Code
+drop database PVR;
+-- SQLBook: Code
+create table shows(
+    show_id INT PRIMARY KEY,
+    screen_id INT,
+    Foreign Key (screen_id) REFERENCES screens(screen_id),
+    movie_id INT,
+    Foreign Key (movie_id) REFERENCES movies(movie_id),
+    show_date DATE,
+    show_time TIME
+);
+-- SQLBook: Code
+drop table shows;
+-- SQLBook: Code
+create table screen_seat_type(
+    seat_type_id INT PRIMARY KEY,
+    screen_id INT,
+    Foreign Key (screen_id) REFERENCES screens(screen_id),
+    seat_type VARCHAR(50),
+    seat_count INT
+);
+-- SQLBook: Code
+create table screen_seats(
+    seat_id INT PRIMARY KEY,
+    screen_id INT,
+    Foreign Key (screen_id) REFERENCES screens(screen_id),
+    seat_no INT,
+    category VARCHAR(50),
+    price DECIMAL(3,2)
+);
+-- SQLBook: Code
+create table schedule(
+    schedule_id INT PRIMARY KEY,
+    show_id INT,
+    Foreign Key (show_id) REFERENCES shows(show_id),
+    seat_id INT,
+    Foreign Key (seat_id) REFERENCES screen_seats(seat_id),
+    status VARCHAR(50)
+);
+-- SQLBook: Code
+insert into multiplexes (multiplex_id, address, screen_count, total_seating)
+VALUES('104','CHENNAI',1,150)
+-- SQLBook: Code
+delete from multiplexes where multiplex_id=100;
+-- SQLBook: Code
+desc multiplexes;
+-- SQLBook: Code
+update multiplexes SET total_seating=0 WHERE total_seating is NULL;
+
+-- SQLBook: Code
+ALTER table multiplexes
+MODIFY COLUMN total_seating INT NOT NULL;
+-- SQLBook: Code
+select * from multiplexes;
+-- SQLBook: Code
+use pvr;
+-- SQLBook: Code
+ALTER TABLE screen_seats MODIFY price DECIMAL;
+-- SQLBook: Code
+ALTER Table screen_seats ADD CONSTRAINT CATEGORY_CK CHECK (category in('gold','silver','platinum'));

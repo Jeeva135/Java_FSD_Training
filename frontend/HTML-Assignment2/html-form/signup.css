@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700;900&display=swap');
+
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    width: 70%;
+    padding: 20px;
+    margin: 1rem auto;
+    
+}
+.form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #ececec;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.form>h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.form-group
+{
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-input {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    border: none;
+    border-bottom:solid rgb(255,116,92);
+    /* border-radius: 8px; */
+}
+button{
+    padding: 1rem 2rem;
+    border: none;
+    /* border-radius: 8px; */
+    background-color: rgb(255,116,92);
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all .3s ease;
+    /* margin-left: 40px; */
+    
+}
